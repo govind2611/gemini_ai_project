@@ -45,6 +45,12 @@ app.post("/generate", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hello world",
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running at port: ${PORT}`);
 });
