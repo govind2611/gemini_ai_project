@@ -1,0 +1,183 @@
+/* Reset some default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #ff7e5f,
+    #feb47b
+  ); /* New warm color combination */
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Lighter background for better contrast */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+  transform: translateY(20px); /* Slight initial offset for better effect */
+}
+
+/* Heading */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+h1:hover {
+  color: #feb47b; /* Highlight color on hover */
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  position: relative;
+}
+
+/* Label styling */
+label {
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+/* Input field styling */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #feb47b; /* Adjusted border color */
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+input[type="text"]:focus {
+  border-color: #ff7e5f;
+  box-shadow: 0 0 8px rgba(255, 126, 95, 0.5);
+  transform: scale(1.02); /* Slight scale effect on focus */
+}
+
+/* Button styling */
+button {
+  background-color: #ff7e5f;
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+button:hover {
+  background-color: #feb47b;
+  transform: scale(1.05);
+}
+
+/* Response styling */
+#response {
+  margin-top: 20px;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 15px;
+  background-color: rgba(255, 126, 95, 0.2); /* Light response background */
+  border-radius: 8px;
+  display: none; /* Initially hidden */
+  animation: slideUp 0.8s ease-in-out;
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 40px;
+  height: 26px;
+  margin-left: 100px;
+  --c: no-repeat linear-gradient(#000 0 0);
+  background: var(--c) 0 100%, var(--c) 50% 100%, var(--c) 100% 100%;
+  background-size: 8px calc(100% - 4px);
+  position: relative;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #000;
+  left: 0;
+  top: 0;
+  animation: l3-1 1.5s linear infinite alternate,
+    l3-2 0.75s cubic-bezier(0, 200, 0.8, 200) infinite;
+}
+@keyframes l3-1 {
+  100% {
+    left: calc(100% - 8px);
+  }
+}
+@keyframes l3-2 {
+  100% {
+    top: -0.1px;
+  }
+}
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 30px;
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
