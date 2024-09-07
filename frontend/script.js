@@ -13,7 +13,7 @@ document.getElementById("aiForm").addEventListener("submit", async (e) => {
   loader.style.display = "block";
 
   try {
-    const response = await fetch("http://localhost:3000/generate", {
+    const response = await fetch("https://gemini-ai-project.onrender.com/generate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
